@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>중첩되는 태그</title>
+
+  <!-- 표의 시각화를 위한 CSS 코드 -->
+  <style>
+    table { border-collapse: collapse; }
+    th, td { border: 1px solid black; padding: 8px; }
+  </style>
+
+</head>
+<body>
+    <table>
+        <caption>오늘의 식단</caption>
+        <tr>
+            <td></td>
+            <th scope="col">아침</th>
+            <th scope="col">점심</th>
+            <th scope="col">저녁</th>
+        </tr>
+        <tr>
+            <th scope="row">밥</td>
+            <td>현미밥</td>
+            <td rowspan="2">호박죽</td>
+            <td>흰쌀밥</td>
+        </tr>
+        <tr>
+            <th scope="row">국</th>
+            <td>콩나물국</td>
+            <td>갈비탕</td>
+        </tr>
+        <tr>
+            <th scope="row">반찬</th>
+            <td colspan="3">배추김치</td>
+        </tr>
+    </table>
+</body>
+</html>
