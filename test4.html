@@ -3,129 +3,69 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>인라인 요소와 블록 요소</title>
+  <title>Document</title>
+
   <style>
-    body{padding:24px;line-height:1.5em}a,abbr,acronym,audio,b,bdi,bdo,big,br,button,canvas,cite,code,data,datalist,del,dfn,em,embed,i,iframe,img,input,ins,kbd,label,map,mark,meter,noscript,object,output,picture,progress,q,ruby,s,samp,script,select,slot,small,span,strong,sub,sup,svg,template,textarea,time,tt,u,var,video,wbr{background-color:rgba(0,255,0,1)}address,article,aside,blockquote,dd,details,dialog,div,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,h3 h4,h5,h6,header,hr,li,main,nav,ol,p,pre,section,table,ul{background-color:rgba(0,128,255,.333);margin:8px 0}.inline-block,button,input{background-color:rgba(255,0,255,.333)}.inline-block{display:inline-block}button,input{font-size:1rem}hr{margin:24px 0}div{padding:24px}
+    a,abbr,acronym,address,applet,article,aside,audio,b,big,blockquote,body,canvas,caption,center,cite,code,dd,del,details,dfn,div,dl,dt,em,embed,fieldset,figcaption,figure,footer,form,h1,h2,h3,h4,h5,h6,header,hgroup,html,i,iframe,img,ins,kbd,label,legend,li,mark,menu,nav,object,ol,output,p,pre,q,ruby,s,samp,section,small,span,strike,strong,sub,summary,sup,table,tbody,td,tfoot,th,thead,time,tr,tt,u,ul,var,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:after,blockquote:before,q:after,q:before{content:'';content:none}table{border-collapse:collapse;border-spacing:0}.header{display:grid;grid-template-columns:24px 400px 1fr 84px 24px;grid-template-areas:'left-space logo nav account right-space';align-items:center;height:64px;background-color:#ff4500}.header .logo{grid-area:logo;font-size:2rem;font-weight:700;text-decoration:none;color:#fff}.header .nav{grid-area:nav}.header .nav li{display:inline-block;margin-right:36px}.header .nav li a{font-size:1.25rem;text-decoration:none;color:#fff}.header .account{grid-area:account;font-size:1.5rem;text-decoration:none;color:#fff}.main{display:grid;grid-template-columns:280px 1fr;grid-template-areas:'aside content'}.main .aside{grid-area:aside;background-color:#eee;border-right:1px solid #d3d3d3;padding:36px}.main .aside .option-title{font-size:1.5em;font-weight:700; color: gray;}.main .aside ul{font-size:1.25em;margin:32px 8px;line-height:1.5em}.main .aside ul li{cursor:pointer}.main .content{grid-area:content;min-height:calc(100vh - 196px);background-color:#fafafa}.main .content .section.intro{padding:96px 80px;background-color:#fff;border-bottom:1px solid #d3d3d3;font-size:1.5rem;line-height:1.3em}.main .content .section.intro h1{font-size:1.5em;font-weight:700;margin-bottom:24px}.main .content .section.gallery{padding:16px}.main .content .section.gallery .article{display:inline-block;margin:8px;padding:24px;background-color:#fff;border:1px solid #ddd;border-radius:16px}.main .content .section.gallery .article .photo{width:480px;height:360px}.main .content .section.gallery .article .info{display:grid;grid-template-columns:64px 1fr;grid-template-rows:32px max-content;grid-template-areas:'like author' 'like desc';align-items:center;margin-top:16px;font-size:1.2rem}.main .content .section.gallery .article .info .like{grid-area:like;text-align:center;font-size:2.4em;color:#ff1493}.main .content .section.gallery .article .info .author{grid-area:author;font-weight:700}.main .content .section.gallery .article .info .desc{grid-area:desc;padding:4px 0;color:gray}#photo-1{background-image:url(photo.png)}.footer{background-color:#383838;padding:64px 0;font-size:1.2rem;text-align:center}.footer ul>li{display:inline-block;padding:0 48px}.footer ul>li:not(:last-child){border-right:1px solid gray}.footer ul>li a{color:#fff;text-decoration:none}
   </style>
 </head>
 <body>
-  <h1>인라인 요소 vs. 블록 요소</h1>
-
-  화면 내 inline 요소들은 초록색, <br>
-  block 요소들은 파랑색, <br>
-  inline-block 요소들은 보라색으로 표시했습니다.
-
-  <hr>
-
-  <h2>inline 요소</h2>
+  <header class="header">
+    <a class="logo" href="#">My web</a>
+    <nav class="nav">
+      <ul>
+        <li><a href="#">사진 올리기</a></li>
+        <li><a href="#">내 정보</a></li>
+        <li><a href="#">팔로우 보기</a></li>
+        <li><a href="#">팔로워 보기</a></li>
+      </ul>
+    </nav>
+    <a class="account" href="#">Logout</a>
+</header>
+  <main class="main">
+    <aside class="aside">
+      <div class="option-title">보기 옵션</div>
+      <ul>
+        <li>최신순 보기</li>
+        <li>좋아요 순 보기</li>
+      </ul>
+      <ul>
+        <li>내 사진 사진</li>
+        <li>좋아요 한 사진</li>
+        <li>팔로우 회원 사진</li>
+      </ul>
+    </aside>
+    <div class="content">
+      <section class="section intro">
+        <h1>시맨틱을 이용한 간단한레이아웃.</h1>
+        <p>
+          수많은 이용자들이 공유하는 멋진 사진들을 구경하고<br>
+          내가 직접 찍은 작품들을 공유하세요!
+        </p>
+    </section>
+      <section class="section gallery">
+        <article class="article">
+          <div id="photo-1" class="photo"></div>
+          <div class="info">
+            <div class="like">♥︎</div>
+            <div class="author">홍길동</div>
+            <div class="desc">
+              여행중 발견한 풍경을 사진에 담아보았습니다.
+            </div>
+          </div>
+        </article>
+    </section>
+    </div>
+</main>
+  <footer class="footer">
+    <ul>
+      <li><a href="#">회사소개</a></li>
+      <li><a href="#">인재채용</a></li>
+      <li><a href="#">이용약관</a></li>
+      <li><a href="#">개인정보 보호</a></li>
+      <li><a href="#">고객센터</a></li>
+    </ul>
+</footer>
   
-  인라인 요소들은 이 <span>span 태그</span>와 같이<br>
-  안에 든 내용만큼의 크기를 차지합니다.<br><br>
-
-  또한 <span>이처럼</span>, <span>줄바꿈</span> 없이 <span>한 줄</span>에
-  여러 요소들이 들어가는 것도 가능하죠.
-
-  <br><br>
-
-  <strong>strong 태그</strong>, <i>i 태그</i>, <a href="#">a 태그</a>, 그리고 앞으로 배울<br>
-  <input placeholder="input 태그"/>, <button>button 태그</button> 등도 마찬가지입니다.
-
-  <br><br>
-  
-  <h3>순수 inline 요소들의 특징</h3>
-  inline-block이 아닌 순수 inline 요소들은 한 span 요소인 <span>이것과<br>
-  같이</span> 요소 내부에서 줄바꿈이 일어나 다른 줄로 분리되기도 합니다.
-
-  <br><br>
-  
-  또한 자체적인 크기를 가질 수 없어서, 높이나 너비,<br>
-  안팎의 여백을 임의로 지정할 수 없습니다. 
-  
-  <br><br>
-
-  내용물에 뒤집어 씌운 양파망이나 스판덱스 주머니 등에 비유될 수 있겠지요.
-
-  <hr>
-
-  <h2>block level 요소</h2>
-
-  위의 제목들(h1~ 태그들)에서 볼 수 있듯, block 요소들은<br>
-  부모 요소의 가로 한 줄을 독점합니다.<br>
-  때문에 블럭 요소가 들어간 곳에는 강제 줄바꿈이 일어나죠.
-  
-  <br><br>
-
-  <ul>
-    <li>목록 태그에서</li>
-    <li>기본적으로 줄바뀜이 되는것도</li>
-    <li>이 때문입니다.</li>
-  </ul>
-
-  <div>
-    이것이 대표적인 block level 요소인 div 태그입니다.<br>
-    이 페이지 내 모든 div 태그들은 안쪽에 여백을 24px 준 상태죠.<br><br>
-    위의 제목 요소들을 개발자 툴로 선택해 보면<br>
-    바깥 여백이 적용된 모습을 볼 수 있을 것입니다.
-    <p>
-      이렇게 안쪽에 p 같은 다른 블럭 요소나
-    </p>
-    <span>span</span> 같은 인라인 요소들을 넣을 수도 있습니다.<br><br>
-    다른 설정이 없다면 이렇게 부모 요소의 너비 전체를 차지하지만
-  </div>
-  <br>
-  <div style="width: 480px; height: 200px; text-align: center;">
-    이처럼 너비와 높이의 값을 지정할 수 있습니다.<br>
-    그래도 여전히 이 가로 줄은 독점하게 됩니다.<br>
-    <i>(개발자 도구로 선택해서 확인해보세요.)</i><br><br>
-    또한 블럭 요소는 이와 같이 텍스트의 정렬도 설정할 수 있죠.
-  </div>
-  
-  <hr>
-
-  <h2>inline-block 요소</h2>
-
-  <div>
-    그렇다면 이 div 요소를 
-  </div>
-  <div>
-    inline-block 으로 바꿔보면
-  </div>
-  <div>
-    어떻게 될까요?
-  </div>
-
-  <div class="inline-block">
-    짜잔! 어떤가요?
-  </div>
-  <div class="inline-block">
-    기본 크기는 내용에 맞추지만
-  </div>
-  <div class="inline-block" style="margin: 24px;">
-    자제으로 여백을 가질 수도,
-  </div>
-  <div class="inline-block" style="width: 500px; height: 150px;">
-    크기와 높이를 가질 수도 있죠.
-  </div>
-  <div class="inline-block">
-    이처럼 한 줄 내 요소들 중 하나로
-  </div>
-  <div class="inline-block">
-    나타내어질 수 있는 거구요.
-  </div>
-  <div class="inline-block">
-    inline 요소와 block level의 특성을
-  </div>
-  <div class="inline-block">
-    적절히 혼합한 것이 이 inline-block 요소입니다.
-  </div>
-  
-  <hr>
-
-  <h2>마무리</h2>
-  <span>인라인 요소</span>와 <div>블럭 요소</div>, 그리고 
-  <div class="inline-block">인라인-블럭</div> 요소들의 특성과 차이를 잘 알아두면<br>
-  이들을 활용하여 어떤 형태의 웹페이지든 만들어낼 수 있습니다.
-
-
 </body>
 </html>
