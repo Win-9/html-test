@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>인라인 요소와 블록 요소</title>
+  <style>
+    body{padding:24px;line-height:1.5em}a,abbr,acronym,audio,b,bdi,bdo,big,br,button,canvas,cite,code,data,datalist,del,dfn,em,embed,i,iframe,img,input,ins,kbd,label,map,mark,meter,noscript,object,output,picture,progress,q,ruby,s,samp,script,select,slot,small,span,strong,sub,sup,svg,template,textarea,time,tt,u,var,video,wbr{background-color:rgba(0,255,0,1)}address,article,aside,blockquote,dd,details,dialog,div,dl,dt,fieldset,figcaption,figure,footer,form,h1,h2,h3 h4,h5,h6,header,hr,li,main,nav,ol,p,pre,section,table,ul{background-color:rgba(0,128,255,.333);margin:8px 0}.inline-block,button,input{background-color:rgba(255,0,255,.333)}.inline-block{display:inline-block}button,input{font-size:1rem}hr{margin:24px 0}div{padding:24px}
+  </style>
+</head>
+<body>
+  <h1>인라인 요소 vs. 블록 요소</h1>
+
+  화면 내 inline 요소들은 초록색, <br>
+  block 요소들은 파랑색, <br>
+  inline-block 요소들은 보라색으로 표시했습니다.
+
+  <hr>
+
+  <h2>inline 요소</h2>
+  
+  인라인 요소들은 이 <span>span 태그</span>와 같이<br>
+  안에 든 내용만큼의 크기를 차지합니다.<br><br>
+
+  또한 <span>이처럼</span>, <span>줄바꿈</span> 없이 <span>한 줄</span>에
+  여러 요소들이 들어가는 것도 가능하죠.
+
+  <br><br>
+
+  <strong>strong 태그</strong>, <i>i 태그</i>, <a href="#">a 태그</a>, 그리고 앞으로 배울<br>
+  <input placeholder="input 태그"/>, <button>button 태그</button> 등도 마찬가지입니다.
+
+  <br><br>
+  
+  <h3>순수 inline 요소들의 특징</h3>
+  inline-block이 아닌 순수 inline 요소들은 한 span 요소인 <span>이것과<br>
+  같이</span> 요소 내부에서 줄바꿈이 일어나 다른 줄로 분리되기도 합니다.
+
+  <br><br>
+  
+  또한 자체적인 크기를 가질 수 없어서, 높이나 너비,<br>
+  안팎의 여백을 임의로 지정할 수 없습니다. 
+  
+  <br><br>
+
+  내용물에 뒤집어 씌운 양파망이나 스판덱스 주머니 등에 비유될 수 있겠지요.
+
+  <hr>
+
+  <h2>block level 요소</h2>
+
+  위의 제목들(h1~ 태그들)에서 볼 수 있듯, block 요소들은<br>
+  부모 요소의 가로 한 줄을 독점합니다.<br>
+  때문에 블럭 요소가 들어간 곳에는 강제 줄바꿈이 일어나죠.
+  
+  <br><br>
+
+  <ul>
+    <li>목록 태그에서</li>
+    <li>기본적으로 줄바뀜이 되는것도</li>
+    <li>이 때문입니다.</li>
+  </ul>
+
+  <div>
+    이것이 대표적인 block level 요소인 div 태그입니다.<br>
+    이 페이지 내 모든 div 태그들은 안쪽에 여백을 24px 준 상태죠.<br><br>
+    위의 제목 요소들을 개발자 툴로 선택해 보면<br>
+    바깥 여백이 적용된 모습을 볼 수 있을 것입니다.
+    <p>
+      이렇게 안쪽에 p 같은 다른 블럭 요소나
+    </p>
+    <span>span</span> 같은 인라인 요소들을 넣을 수도 있습니다.<br><br>
+    다른 설정이 없다면 이렇게 부모 요소의 너비 전체를 차지하지만
+  </div>
+  <br>
+  <div style="width: 480px; height: 200px; text-align: center;">
+    이처럼 너비와 높이의 값을 지정할 수 있습니다.<br>
+    그래도 여전히 이 가로 줄은 독점하게 됩니다.<br>
+    <i>(개발자 도구로 선택해서 확인해보세요.)</i><br><br>
+    또한 블럭 요소는 이와 같이 텍스트의 정렬도 설정할 수 있죠.
+  </div>
+  
+  <hr>
+
+  <h2>inline-block 요소</h2>
+
+  <div>
+    그렇다면 이 div 요소를 
+  </div>
+  <div>
+    inline-block 으로 바꿔보면
+  </div>
+  <div>
+    어떻게 될까요?
+  </div>
+
+  <div class="inline-block">
+    짜잔! 어떤가요?
+  </div>
+  <div class="inline-block">
+    기본 크기는 내용에 맞추지만
+  </div>
+  <div class="inline-block" style="margin: 24px;">
+    자제으로 여백을 가질 수도,
+  </div>
+  <div class="inline-block" style="width: 500px; height: 150px;">
+    크기와 높이를 가질 수도 있죠.
+  </div>
+  <div class="inline-block">
+    이처럼 한 줄 내 요소들 중 하나로
+  </div>
+  <div class="inline-block">
+    나타내어질 수 있는 거구요.
+  </div>
+  <div class="inline-block">
+    inline 요소와 block level의 특성을
+  </div>
+  <div class="inline-block">
+    적절히 혼합한 것이 이 inline-block 요소입니다.
+  </div>
+  
+  <hr>
+
+  <h2>마무리</h2>
+  <span>인라인 요소</span>와 <div>블럭 요소</div>, 그리고 
+  <div class="inline-block">인라인-블럭</div> 요소들의 특성과 차이를 잘 알아두면<br>
+  이들을 활용하여 어떤 형태의 웹페이지든 만들어낼 수 있습니다.
+
+
+</body>
+</html>
