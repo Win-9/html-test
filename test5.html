@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+  <style>
+    form { line-height: 1.5em; margin: 36px 24px; }
+    input, select { font-size: 0.9rem; }
+    button { font-size: 1rem; }
+    label { margin-right: 8px; vertical-align: top; }
+  </style>
+</head>
+<body>
+    <lable for="ip-name">이름</lable>
+    <input id="ip-name" type="text" placeholder="이름입력" maxlength="4">
+    <br>
+    <lable for="ip-name1">비번</lable>
+    <input id="ip-name1" type="password" placeholder="비번입력">
+    <br><br>
+    <lable for="ip-name2">비번</lable>
+    <input id="ip-name2" type="number" placeholder="숫자입력">
+    <br><br>
+    <lable for="ip-name3">체크</lable>
+    <input id="ip-name3" type="checkbox" checked>
+    <br><br>
+    <label>선택</label>
+    <input id="check1" type="radio" name="role"checked>
+    <label for="check1">1</label>
+    <input id="check2" type="radio" name="role">
+    <label for="check2">2</label>
+    <input id="check3" type="radio" name="role">
+    <label for="check3">3</label>
+    <br>
+    <br>
+    <label for="ip-file">파일선택</label>
+    <input id="ip-file" type="file" multiple>
+    <br>
+    <br>
+    <label for="sel">첨부</label>
+   <select id="sel">
+       <option value="one">1</option>
+       <option value="two">2</option>
+       <option value="three">3</option>
+       <option value="four">4</option>
+       <option value="five">5</option>
+       <option value="six">6</option>
+       <option value="seven">7</option>
+   </select>
+   <br><br>
+   <label for="te">소개</label>
+   <textarea id="te" cols="30" rows="9"></textarea>
+   <button type="">제출</button>
+   <button type="button" disabled>취소</button>
+</body>
+</html>
+
+<!-- 
+
+    <input id="input-dev" type="radio"/>
+    <label for="input-dev">개발자</label>
+    <input id="input-design" type="radio"/>
+    <label for="input-design">디자이너</label>
+    <input id="input-pm" type="radio"/>
+    <label for="input-pm">매니저</label>
+
+      <option value="adm">운영팀</option>
+      <option value="mkt">마케팅팀</option>
+      <option value="frt">프론트엔드팀</option>
+      <option value="bck">백엔드팀</option>
+      <option value="tst">테스트팀</option>
+      <option value="mnt">유지보수팀</option>
+-->
