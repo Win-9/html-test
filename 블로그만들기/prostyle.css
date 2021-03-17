@@ -3,32 +3,48 @@ body{
     padding:0;
     background-color: black;
 }
-ul>li{
+header{
+    margin-top: 50%;
+    display: grid;
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(2,300px);
+    background-color: #1abe22;
+    grid-template-areas:
+    "topic topic topic topic menu menu menu out out"
+    "topic topic topic topic menu menu menu out out";
+}
+header nav{
+    padding-left:12%;
     display: inline-block;
 }
-header{
-    background-color: #9E9E9E;
-    display: grid;
-    grid-template-areas:
-    "topic topic menu menu menu menu menu menu out"
-    "topic topic menu menu menu menu menu menu out";
+li:nth-child(1){
+    border-bottom: 2px solid black;
 }
-header.topic{
+header .topic{
+    padding-left: 1%;
     display: inline-block;
     grid-area:"topic";
-    color: #B388FF;
-    font-size: 2em;
+    color: black;
+    font-size: 1.5em;
     font-weight: bold;
+    border-right-color: 1px solid black;
 }
-header>ul{
+header ul li{
+    margin-right:24px;
+    display: inline-block;
     grid-area:"menu";
-    color: #B388FF;
-    font-size: 2em;
+    color: black;
+    font-size: 1.3em;
     font-weight: bold;
 }
-header>.out{
+header ul li:hover{
+    opacity: 0.2;
+}
+header .out{
+    padding-left:20%;
+    display: inline-block;
     grid-area:"out";
-    color:#B388FF;
+    color:black;
     font-size:2em;
     font-weight: bold;
 }
