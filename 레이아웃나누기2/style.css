@@ -1,41 +1,50 @@
-.wrapper{
+body{
+    margin:0;
+    padding:0;
+    background-color: black;
+}
+header{
+    margin-top: 50%;
     display: grid;
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(4,150px);
-}
-.wrapper>div{
-    background-color: yellow;
-}
-.wrapper>div:nth-child(even){
-    background-color: yellowgreen;
-}
-.wrapper{
+    grid-template-columns: repeat(9,1fr);
+    grid-template-rows: repeat(2,300px);
+    background-color: #1abe22;
     grid-template-areas:
-    "red red red"
-    "green blue blue"
-    "green blue blue"
-    "purple purple orange";
+    "topic topic topic topic menu menu menu out out"
+    "topic topic topic topic menu menu menu out out";
 }
-.wrapper>div:nth-child(1){
-    background-color: red;
-    grid-area: red;  
+header nav{
+    padding-left:12%;
+    display: inline-block;
 }
-.wrapper>div:nth-child(2){
-    background-color: green;
-    grid-area: green;
+li:nth-child(1){
+    border-bottom: 2px solid black;
 }
-.wrapper>div:nth-child(3){
-    background-color: blue;
-    grid-area: blue;
+header .topic{
+    padding-left: 1%;
+    display: inline-block;
+    grid-area:"topic";
+    color: black;
+    font-size: 1.5em;
+    font-weight: bold;
+    border-right-color: 1px solid black;
 }
-.wrapper>div:nth-child(4){
-    background-color: purple;
-    grid-area: purple;
+header ul li{
+    margin-right:24px;
+    display: inline-block;
+    grid-area:"menu";
+    color: black;
+    font-size: 1.3em;
+    font-weight: bold;
 }
-.wrapper>div:nth-child(5){
-    background-color: orange;
-    grid-area: orange;
+header ul li:hover{
+    opacity: 0.2;
 }
-.wrapper{
-    gap: 10px;
+header .out{
+    padding-left:20%;
+    display: inline-block;
+    grid-area:"out";
+    color:black;
+    font-size:2em;
+    font-weight: bold;
 }
