@@ -9,28 +9,33 @@
 .wrapper>div:nth-child(even){
     background-color: yellowgreen;
 }
+.wrapper{
+    grid-template-areas:
+    "red red red"
+    "green blue blue"
+    "green blue blue"
+    "purple purple orange";
+}
 .wrapper>div:nth-child(1){
     background-color: red;
-    grid-column: 1/4;
-    grid-row:1/2;
+    grid-area: red;  
 }
 .wrapper>div:nth-child(2){
     background-color: green;
-    grid-column: 1/2;
-    grid-row:2/4;
+    grid-area: green;
 }
 .wrapper>div:nth-child(3){
     background-color: blue;
-    grid-column: 2/4;
-    grid-row:2/4;
+    grid-area: blue;
 }
 .wrapper>div:nth-child(4){
     background-color: purple;
-    grid-column: 1/3;
-    grid-row:4/5;
+    grid-area: purple;
 }
 .wrapper>div:nth-child(5){
     background-color: orange;
-    grid-column: 3/4;
-    grid-row:4/5;
+    grid-area: orange;
+}
+.wrapper{
+    gap: 10px;
 }
