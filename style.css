@@ -1,0 +1,26 @@
+body{
+    margin:0;padding:0;
+}
+.wrapper{
+    border:2px solid black;
+}
+.wrapper>div{
+    background-color: yellowgreen;
+}
+.wrapper>div:nth-child(even){
+    background-color: turquoise;
+}
+.wrapper{
+    display: grid;
+    height:600px;
+    grid-template-columns:repeat(3, 1fr);
+}
+.wrapper>div>div{
+    background-color: tomato;
+}
+.wrapper>div:nth-child(3n+2)>div{
+    height: 100px;;
+}
+.wrapper>div:nth-child(3n)>div{
+    height: 150px;;
+}
