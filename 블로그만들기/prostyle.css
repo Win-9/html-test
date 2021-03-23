@@ -4,6 +4,7 @@ body{
     background-color: black;
 }
 header{
+    position:relative;
     margin-top: 50%;
     display: grid;
     grid-template-columns: repeat(9,1fr);
@@ -21,7 +22,7 @@ li:nth-child(1){
     border-bottom: 2px solid black;
 }
 header .topic{
-    padding-left: 1%;
+    padding-bottom:3%;
     display: inline-block;
     grid-area:"topic";
     color: black;
@@ -47,4 +48,49 @@ header .out{
     color:black;
     font-size:2em;
     font-weight: bold;
+}
+.aside{
+    display: block;
+    background-color: #9E9E9E;
+    position:fixed;
+    top:10%;
+    width:20%;
+    height:100%;
+    display: grid;
+    grid-template-rows: repeat(12,1fr);
+    grid-template-areas:
+    "big"
+    "big"
+    "big"
+    "m1"
+    "m1"
+    "m2"
+    "m2"
+    "void"
+    "void"
+    "m3"
+    "m3"
+    "m4"
+    "m4"
+    "m5"
+    "m5"
+    "m6"
+    "m6";
+}
+aside ul li{
+    list-style: none;
+    display:block;
+    margin:0;
+}
+.aside big{
+    text-align: left;
+    grid-area: "big";
+    padding-left: 10px;
+    font-size: 1.25rem;
+}
+.aside .list_1_1{
+    grid-area: "m1";
+}
+.aside .list_1_2{
+    grid-area: "m2";
 }
