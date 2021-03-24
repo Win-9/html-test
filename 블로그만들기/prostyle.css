@@ -1,7 +1,7 @@
 body{
     margin:0;
     padding:0;
-    background-color: black;
+    background-color: #E1F5FE;
 }
 header{
     position:relative;
@@ -9,7 +9,7 @@ header{
     display: grid;
     grid-template-columns: repeat(9,1fr);
     grid-template-rows: repeat(2,300px);
-    background-color: #1abe22;
+    background-color: #80DEEA;
     grid-template-areas:
     "topic topic topic topic menu menu menu out out"
     "topic topic topic topic menu menu menu out out";
@@ -17,9 +17,6 @@ header{
 header nav{
     padding-left:12%;
     display: inline-block;
-}
-li:nth-child(1){
-    border-bottom: 2px solid black;
 }
 header .topic{
     padding-bottom:3%;
@@ -51,46 +48,84 @@ header .out{
 }
 .aside{
     display: block;
-    background-color: #9E9E9E;
+    background-color: #E0F7FA;
     position:fixed;
-    top:10%;
     width:20%;
     height:100%;
     display: grid;
-    grid-template-rows: repeat(12,1fr);
+    grid-template-rows: repeat(9,1fr);
     grid-template-areas:
     "big"
     "big"
-    "big"
-    "m1"
     "m1"
     "m2"
-    "m2"
-    "void"
     "void"
     "m3"
-    "m3"
-    "m4"
     "m4"
     "m5"
-    "m5"
-    "m6"
-    "m6";
 }
-aside ul li{
+.aside ul li{
     list-style: none;
     display:block;
     margin:0;
+    padding-left:22px;
 }
-.aside big{
+.aside ul li:hover{
+    background-color: #81D4FA;
+    color: white;
+}
+.aside .big{
     text-align: left;
     grid-area: "big";
-    padding-left: 10px;
-    font-size: 1.25rem;
+    font-size:2rem;
+    padding:20px;
+    font-weight: bold;
 }
 .aside .list_1_1{
     grid-area: "m1";
+    font-size: 1.25rem;
+    padding:20px;
 }
 .aside .list_1_2{
     grid-area: "m2";
+    font-size: 1.25rem;
+    padding:20px;
+}
+.aside .void{
+    grid-area:"void";
+    padding:20px;
+}
+.aside .list_2_1{
+    grid-area: "m3";
+    font-size: 1.25rem;
+    padding:20px;
+}
+.aside .list_2_2{
+    grid-area: "m4";
+    font-size: 1.25rem;
+    padding:20px;
+}
+.aside .list_2_3{
+    grid-area: "m5";
+    font-size: 1.25rem;
+    padding:20px;
+}
+.content .up{
+    padding: 96px 400px;
+    border-bottom:2px solid white;
+    color:grey;
+}
+.content .up h1{
+    font-size: 2rem;
+    width:600px;
+    font-weight:bold;
+}
+.content .up p{
+    font-size: 1.25rem;
+    width:600px;
+    font-weight:bold;
+    padding-top:100px;
+}
+footer{
+    
 }
