@@ -126,6 +126,23 @@ header .out{
     font-weight:bold;
     padding-top:100px;
 }
-footer{
-    
+.down #photo{
+    width:500px;
+    height:500px;
+    background-color: white;
+    border-radius: 20px;
+    display: inline-block;
+}
+.down{
+    padding-left: 800px;
+    background-color: white;
+    grid-template-columns: repeat(5,2fr);
+    grid-template-rows:repeat(2,2fr);
+    grid-template-areas:
+    "m1 m2"
+    "m3 m4"
+    "m5";
+}
+.down .north1{
+    grid-area: "m1";
 }
