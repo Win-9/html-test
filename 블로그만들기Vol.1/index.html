@@ -9,14 +9,14 @@
   <script src="data.js"></script>
   <script src="script.js"></script>
 </head>
-  <body onload="setMenu('upload')">
+  <body onload="init()">
   <header>
     <a class="logo" href="#">FastCampus Portfolio</a>
     <nav class="nav">
       <ul>
         <li class="gallery" onclick="setMenu('gallery')">사진들 보기</li>
-        <li class="upload on" onclick="setMenu('upload')">사진 올리기</li>
-        <li class="myinfo" onclick="setMenu('myinfo')">내 정보</li>
+        <li class="upload" onclick="setMenu('upload')">사진 올리기</li>
+        <li class="myinfo on" onclick="setMenu('myinfo')">내 정보</li>
         </ul>
     </nav>
     <a class="account" href="#">Logout</a>
