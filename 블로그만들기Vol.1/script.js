@@ -47,7 +47,29 @@ function updateMyInfo(){
     my_info.interest=interests;
     setEditMyInfo(false);
 }
+function showPhotos(){
+    var gallery=document.querySelector("#gallery");
+    photos.forEach(function(photo){
+        var photoNode=document.querySelector("article.hidden").
+        cloneNode(true);
+        photoNode.classList.remove("hidden");
+        
+        photoNode.querySelector(".author").innerHTML=photo.
+        user_name;
+
+        photoNode.querySelector(".desc").innerHTML=photo.
+        description;
+
+        photoNode.querySelector(".like").innerHTML=photo.
+        likes;
+
+        if(my_info.like.indexOf(phto.idx)>-1){
+            photoNode.querySelector(".like").classList.add("on");
+        }
+        gallery.append(photoNode);
+    })
+}
 function init(){
     showInfo();
+    showPhotos();
 }
-  
