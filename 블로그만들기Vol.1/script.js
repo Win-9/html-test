@@ -33,14 +33,15 @@ function showInfo(){
 function setEditMyInfo(on){
     document.querySelector("#myinfo > div").className=on?'edit':'non-edit';
     document.querySelectorAll("#myinfo input").forEach(function(input){
-        input.disabled=on;
+        input.disabled=!on;
     });
     showInfo();
 }
 function updateMyInfo(){
     var interests=[];
     my_info.introduction=document.querySelector("#ip-intro").value;
-    my_info.as=document.querySelector("#myinfo input[type=checkbox]:checked").forEach(function (checkbox){
+    my_info.as = document.querySelector("#myinfo input[type=radio]:checked").value;
+    document.querySelectorAll("#myinfo input[type=checkbox]:checked").forEach(function (checked){
         interests.push(checked.value);
     });
     my_info.interest=interests;
