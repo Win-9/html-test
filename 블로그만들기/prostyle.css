@@ -3,10 +3,40 @@ body{
     margin:0;
     background-color: #E0F7FA;
 }
-h1{
+.headline{
+    position: fixed;
+    height:10%;
+    width: 100%;
+    background-color: #E0E0E0;
+}
+.headline div{
+    display: inline-block;
+}
+.topic{
     color:#00E5FF;
-    font-size:10em;
+    font-size:2em;
+    font-weight: bold;
+    padding-left:2%;
+    padding-top:1%;
+    padding-right:10%;
+    display: inline-block;
+}
+.headline nav{
+    width:50%;
+    display: inline-block;
 }
 ul li{
-    display:inline-block;
+    display: inline-block;
+    color:#84FFFF;
+    font-size:1.2em;
+    margin-right:2%;
+}
+.out{
+    position:absolute;
+    right: 20px;
+    color:#00E5FF;
+    font-size:2em;
+    font-weight: bold;
+    padding-top:1%;
+    display: inline-block;
 }
