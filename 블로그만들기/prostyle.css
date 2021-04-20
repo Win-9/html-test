@@ -40,6 +40,9 @@ body{
     padding-top:1%;
     display: inline-block;
 }
+.compose{
+    display: block;
+}
 .aside{
     position: fixed;
     width:20%;
@@ -55,4 +58,15 @@ body{
 }
 .aside div{
     padding:10%;
+}
+.main_1 div{
+    left:20%;
+    top:70px;
+    width:70%;
+    padding:30px;
+    background-color: #a1e4ec;
+    font-size:2em;
+    font-weight: bold;
+    position:relative;
+    display:block;
 }
