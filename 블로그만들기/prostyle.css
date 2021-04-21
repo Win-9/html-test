@@ -8,6 +8,7 @@ body{
     height:10%;
     width: 100%;
     background-color: black;
+    z-index: 10;
 }
 .headline div{
     display: inline-block;
@@ -64,22 +65,28 @@ body{
 .aside div{
     padding:10%;
 }
+.aside li:hover{
+    background-color: black;
+    transition-duration: 1s;
+}
 .main_1 div{
-    left:20.1%;
+    left:20%;
     top:74px;
-    width:1025px;
+    width:1015px;
     padding:100px;
-    background-color: #E0F7FA;
+    background-color: #424242;
     font-size:2em;
     font-weight: bold;
     position:relative;
     display:block;
-    border-bottom:1px solid #E0E0E0;
+    color:#00E676;
+    border-bottom:2px solid #00E676;
 }
 .ar1{
+    top:100px;
     position: relative;
     width:400px;
-    height:400px;
+    height:365px;
     background-color: black;
     display: inline-block;
     padding:20px;
@@ -94,7 +101,7 @@ body{
     height:300px;
     border-radius: 3px;
 }
-.ar1 .im1{
+.im1{
     background-image: url("https://lh3.googleusercontent.com/proxy/teeEUOuazZg39tSnuwvX8izgK9H6JV8kO2GiWNzm4PwGeYrcK7sd_HKcoOMYixkfsLbdFloAEGOdrJihebEmPQT--P1QfpeFQPyZJA8");
     border-radius: 100%;
     background-size: cover;
@@ -102,6 +109,10 @@ body{
     width:50px;
     display: inline-block;
     text-align: left;
+}
+.im1:hover{
+    background-image:url("https://news.kbs.co.kr/data/fckeditor/new/image/170526_eng03.jpg");
+    transition-duration: 1s;
 }
 #Set1{display: inline-block;}
 .name{
@@ -111,4 +122,86 @@ body{
 .text{
     font-weight: 500;
     color:#00E676;
+}
+.ar2{
+    top:100px;
+    position: relative;
+    width:400px;
+    height:365px;
+    background-color: black;
+    display: inline-block;
+    padding:20px;
+    left:35%;
+    border-radius: 10px;
+    box-shadow: 3px #00E676;
+}
+.ar2>div:first-child{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRbH5gKTBqVS9hyVHld7X9QVQ5soZugBCar9Q&usqp=CAU");
+    background-size: cover;
+    width:400px;
+    height:300px;
+    border-radius: 3px;
+}
+.ar3{
+    top:650px;
+    position: relative;
+    width:400px;
+    height:365px;
+    background-color: black;
+    display: inline-block;
+    padding:20px;
+    right:34.5%;
+    border-radius: 10px;
+    box-shadow: 3px #00E676;
+}
+.ar3>div:first-child{
+    background-image: url("https://pbs.twimg.com/media/B5WKGAyCUAAKOQh.jpg");
+    background-size: cover;
+    width:400px;
+    height:300px;
+    border-radius: 3px;
+}
+.ar4{
+    top:245px;
+    position: relative;
+    width:400px;
+    height:365px;
+    background-color: black;
+    display: inline-block;
+    padding:20px;
+    left:64.5%;
+    border-radius: 10px;
+    box-shadow: 3px #00E676;
+}
+.ar4>div:first-child{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQW6s-hGCkGOKR8UTVYjl67XKGT7sf8hqhz7A&usqp=CAU");
+    background-size: cover;
+    width:400px;
+    height:300px;
+    border-radius: 3px;
+}
+.ar5{
+    top:800px;
+    position: relative;
+    width:400px;
+    height:365px;
+    background-color: black;
+    display: inline-block;
+    padding:20px;
+    right:4.8%;
+    border-radius: 10px;
+    box-shadow: 3px #00E676;
+}
+.ar5>div:first-child{
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQTW_3jKBKw6LQDj1vMunufmYhJAJ8n4SzmPw&usqp=CAU");
+    background-size: cover;
+    width:400px;
+    height:300px;
+    border-radius: 3px;
+}
+.footer{
+    background-color: black;
+    position:absolute;
+    width:100%;
+    z-index: 10;
 }
