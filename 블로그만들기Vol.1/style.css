@@ -1,0 +1,43 @@
+.wrapper{
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(4,150px);
+}
+.wrapper>div{
+    background-color: yellow;
+    text-align: center;
+    text-shadow: blue 100px;
+}
+.wrapper>div:nth-child(even){
+    background-color: yellowgreen;
+}
+.wrapper{
+    grid-template-areas:
+    "red red red"
+    "green blue blue"
+    "green blue blue"
+    "purple purple orange";
+}
+.wrapper>div:nth-child(1){
+    background-color: red;
+    grid-area: red;  
+}
+.wrapper>div:nth-child(2){
+    background-color: green;
+    grid-area: green;
+}
+.wrapper>div:nth-child(3){
+    background-color: blue;
+    grid-area: blue;
+}
+.wrapper>div:nth-child(4){
+    background-color: purple;
+    grid-area: purple;
+}
+.wrapper>div:nth-child(5){
+    background-color: orange;
+    grid-area: orange;
+}
+.wrapper{
+    gap: 10px;
+}
