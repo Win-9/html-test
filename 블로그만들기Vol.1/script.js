@@ -89,7 +89,7 @@ function updateMyInfo(){
     my_info.interest=interests;
 
     setEditMyInfo(false);
-    showMyInfo();
+    updateMyInfoOnDB();
 }
 
 function showPhotos(){
@@ -148,7 +148,39 @@ function toggleLike(idx){
           }
     }
 }
+
 function init(){
-    showMyInfo();
-    showPhotos();
+    //showMyInfo();
+    //showPhotos();
+    loadMyinfo();
+}
+
+function loadMyinfo(){
+    db.collection("my_info").get().then(function (querySelector){
+        querySelector.forEach(function (doc){
+            my_info=doc.data();
+            showMyInfo();
+        })
+    });
+}
+function updateMyInfoOnDB () {
+    db.collection("my_info").doc(my_info.docId).update({
+      introduction: my_info.introduction,
+      as: my_info.as,
+      interest: my_info.interest
+    }).then(function () {
+      loadMyInfo();
+    })
+}
+function uploadFile(){
+    var file=document.querySelector("input[type=file]").files[0];
+    var ref = storage.ref().child(file.name);
+    ref.put(file).then(function(snapshot) {
+    snapshot.ref.getDownloadURL().then(function (url) {
+      var downloadUrl = url;
+      console.log(downloadUrl);
+    })
+  });
+
+  
 }
