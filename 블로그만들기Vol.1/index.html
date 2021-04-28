@@ -67,7 +67,7 @@
         <input type="file"/>
         <br>
         <br>
-        <div class="button">업로드</div>
+        <div class="button" onlick="uploadFile()">업로드</div>
       </section>
 
       <section id="myinfo" class="dep _myinfo">
@@ -131,6 +131,34 @@
       <li><a href="#">고객센터</a></li>
     </ul>
   </footer>
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
+      <!-- The core Firebase JS SDK is always required and must be listed first -->
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-app.js"></script>
 
+    <script src="https://www.gstatic.com/firebasejs/8.3.2/firebase-storage.js"></script>
+
+    <!-- TODO: Add SDKs for Firebase products that you want to use
+        https://firebase.google.com/docs/web/setup#available-libraries -->
+    <script src="https://www.gstatic.com/firebasejs/8.4.2/firebase-analytics.js"></script>
+
+    <script>
+      // Your web app's Firebase configuration
+      // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+      var firebaseConfig = {
+        apiKey: "AIzaSyBvtirgDBcEvlh1S8WVEXCmbaG0ZJPmo7E",
+        authDomain: "example1-e6e94.firebaseapp.com",
+        projectId: "example1-e6e94",
+        storageBucket: "example1-e6e94.appspot.com",
+        messagingSenderId: "869532003666",
+        appId: "1:869532003666:web:d528e0e703170efe5e5e8b",
+        measurementId: "G-ZR21WLMLPG"
+      };
+      // Initialize Firebase
+      firebase.initializeApp(firebaseConfig);
+      firebase.analytics();
+
+      var db = firebase.firestore();
+      var storage=firebase.storage();
+    </script>
 </body>
 </html>
