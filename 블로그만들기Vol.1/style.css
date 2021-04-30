@@ -138,6 +138,21 @@ article .info {
   margin-top: 16px;
   font-size: 1.2rem;
 }
+article .info .author {
+  /* ... */
+  cursor: pointer;
+}
+
+article .info .author:hover {
+  opacity: 0.8;
+}
+
+article .info .author span {
+  margin-left: 6px;
+  font-size: 0.9rem;
+  color: dodgerblue;
+}
+
 article .info .like {
   grid-area: like;
   text-align: center;
