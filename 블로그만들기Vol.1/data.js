@@ -1,4 +1,5 @@
-var my_info = {
+var my_info=null;
+var _my_info = {
   id: 'VVS',
   user_name: "VVS!",
   introduction: "12사단 포병여단 89포병대대 2포대.",
@@ -8,7 +9,8 @@ var my_info = {
   follow: ['photo-luv', 'pixa', 'googler', 'js-master']
 }
 
-var photos = [
+var photos=[];
+var _photos = [
   {
     idx: 1,
     user_id: 'js-master',
