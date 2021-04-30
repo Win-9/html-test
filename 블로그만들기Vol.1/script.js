@@ -20,7 +20,10 @@ var filters = {
 }
   
 var sort = sorts.recent;
-var filter = filters.all;
+//var filter = filters.all;
+
+var filtered=photos;
+
 
 function setSort(_sort){
     document.querySelectorAll('#sort li').forEach(function (sortli){
@@ -40,8 +43,10 @@ function setFilter(_filter){
 
     document.querySelector("#filters li."+_sort).classList.add("on");
 
-    filter=filters[_filter];
-    showPhotos();
+    /*filter=filters[_filter];
+    showPhotos();*/
+    filterName = _filter;
+    loadPhotos();
 }
 function setDescLength(){
     document.querySelector("span.descLength").innerHTML
@@ -112,13 +117,20 @@ function showPhotos(){
         photoNode.querySelector(".author").innerHTML=photo.user_name;
         photoNode.querySelector(".desc").innerHTML=photo.description;
         photoNode.querySelector(".like").innerHTML=photo.likes;
-
+        photoNode.querySelector(".photo").style.backgroundImage 
+        = "url('" + photo.url + "')";
         if(my_info.like.indexOf(photo.idx)>1){
             photoNode.querySelector(".like").classList.add("on");
         }
-        
-        photoNode.querySelector(".photo").style.backgroundImage
-        = "url('./img/photo/" + photo.file_name + "')";
+        if (my_info.follow.indexOf(photo.user_id) > -1) {
+            var followSpan = document.createElement("span");
+            followSpan.innerHTML = "FOLLOW"
+            photoNode.querySelector(".author").append(followSpan);
+        }
+
+        photoNode.querySelector(".author").addEventListener(
+            "click", function () { toggleFollow(photo.user_id) }
+        );          
         
         photoNode.querySelector(".like").addEventListener(
             "click", function () { toggleLike(photo.idx) }
@@ -127,12 +139,29 @@ function showPhotos(){
     });
 }
 
+function toggleFollow(user_id){
+    if (my_info.follow.indexOf(user_id) === -1) {
+        my_info.follow.push(user_id);
+      } else {
+        my_info.follow = my_info.follow.filter(
+          function (it) { return it !== user_id; }
+        );
+      }
+      db.collection("my_info").doc(my_info.docId).update({
+        follow: my_info.follow
+      }).then(function () {
+        loadPhotos();
+      });
+    
+}
+
 function toggleLike(idx){
     if(my_info.like.indexOf(idx)===-1){
         my_info.like.push(idx);
         for (var i = 0; i < photos.length; i++) {
             if (photos[i].idx === idx) {
                 photos[i].likes++;
+                toggleLikeOnDB(photos[i]);
                 break;
             }
         }
@@ -143,16 +172,29 @@ function toggleLike(idx){
           for (var i = 0; i < photos.length; i++) {
             if (photos[i].idx === idx) {
               photos[i].likes--;
+              toggleLikeOnDB(photos[i]);
               break;
             }
           }
     }
 }
 
+function toggleLikeOnDB(photo){
+    db.collection("my_info").doc(my_info.docId).update({
+        like: my_info.like
+      }).then(function () {
+        db.collection("photos").doc(String(photo.idx)).update({
+          likes: photo.likes
+        }).then(function () {
+          loadPhotos();
+        });
+      });    
+}
 function init(){
     //showMyInfo();
     //showPhotos();
     loadMyinfo();
+    loadPhotos();
 }
 
 function loadMyinfo(){
@@ -177,10 +219,52 @@ function uploadFile(){
     var ref = storage.ref().child(file.name);
     ref.put(file).then(function(snapshot) {
     snapshot.ref.getDownloadURL().then(function (url) {
-      var downloadUrl = url;
-      console.log(downloadUrl);
+        uploadPhotoInfo();
     })
   });
-
-  
 }
+
+function uploadPhotoInfo(url){
+    var photoInfo = {
+        idx: Date.now(),
+        url: url,
+        user_id: my_info.id,
+        user_name: my_info.user_name,
+        description: document.querySelector("input.description").value,
+        likes: Math.round(Math.random() * 10)
+    }
+    db.collection("photos").doc(String(photoInfo.idx)).set(photoInfo)
+    .then(function () {
+        setMenu('gallery');
+        loadPhotos();
+    })
+    .catch(function (error) {
+        console.error("Error!", error);
+    });
+}
+
+function loadPhotos(){
+    db.collection("photos").
+    where(
+        getFilterParams[filterName]()[0],
+        getFilterParams[filterName]()[1],
+        getFilterParams[filterName]()[2]
+    )
+    .get().then(function (querySnapshot){
+        var photosArray = []
+        querySnapshot.forEach(function (doc) {
+          photosArray.push(doc.data())
+        })
+        photos = photosArray;
+        showPhotos();
+    });
+}
+
+var filterName='all';
+var getFilterParams = {
+    all: function () { return ['idx', '>', 0] },
+    mine: function () { return ['user_id', '==', my_info.id] },
+    like: function () { return ['idx', 'in', my_info.like] },
+    follow: function () { return ['user_id', 'in', my_info.follow] }
+}
+  
